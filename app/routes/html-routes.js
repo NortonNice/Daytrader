@@ -31,7 +31,7 @@ module.exports = function (app) {
   app.get("/users/:userId", function (req, res) {
     db.Users.findById(req.params.userId).then(function (user) {
       res.render("index", { user })
-    }).catch(function(err){
+    }).catch(function (err) {
       console.log(err)
     })
   })

@@ -46,7 +46,7 @@ module.exports = function (app) {
     app.put("/api/:userId/:stock", function (req, res) {
         User.update(
             { stock1: req.params.stock },
-            { where: { id: req.params.userId }})
+            { where: { id: req.params.userId } })
             .then(function (newStock) {
                 return res.status(201).json(newStock)
             }).catch(function (err) {
